@@ -1,5 +1,7 @@
-import org.junit.*;
+package battleshipTesting;
+
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 import battleship.*;
 import battleship.util.*;
@@ -21,7 +23,7 @@ public class SeaTest {
     }
 
     @Test
-    public void testAddShipHori() {
+    public void testAddShipHori() throws IllegalAccessException {
         Sea sea = new Sea(3,3);
         Ship ship1 = new Ship(3);
         Position position1 = new Position(2,0);
@@ -30,7 +32,7 @@ public class SeaTest {
     }
 
     @Test (expected= IllegalStateException.class)
-    public void testAddShipHoriOutOfBoard() {
+    public void testAddShipHoriOutOfBoard() throws IllegalAccessException {
         Sea sea = new Sea(3,3);
         Ship ship1 = new Ship(2);
         Position position1 = new Position(0,2);
@@ -38,7 +40,7 @@ public class SeaTest {
     }
 
     @Test (expected= IllegalStateException.class)
-    public void testAddShipHoriOnOtherVertiShip() {
+    public void testAddShipHoriOnOtherVertiShip() throws IllegalAccessException {
         Sea sea = new Sea(3,3);
         Ship ship1 = new Ship(2);
         Position position1 = new Position(0,2);

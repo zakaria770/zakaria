@@ -1,4 +1,5 @@
 package battleship.util;
+
 import battleship.*;
 /**
  * Position x and y for board of sea
@@ -16,7 +17,7 @@ public class Position {
 	//Constructeur
 
 	/**
-	 * Create a position class with x and y ( wich must be superior to -1)
+	 * Create a position class with x and y ( which must be superior to -1)
 	 * @param x The position x for height
 	 * @param y The position y for width
 	 * @throws IllegalArgumentException

@@ -1,4 +1,5 @@
 package battleship.util;
+
 /**
  * Answer for shoot
  * @author OUAICHOUCHE

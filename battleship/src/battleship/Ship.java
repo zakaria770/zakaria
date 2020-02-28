@@ -1,5 +1,6 @@
 package battleship;
-import battleship.*;
+
+//import battleship.*;
 //import battleship.util.*;
 //import io.*;
 /**
