@@ -1,4 +1,4 @@
-package io ;
+package battleship.util;
 
 
 import java.io.IOException;

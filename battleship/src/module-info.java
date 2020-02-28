@@ -1,0 +1,4 @@
+module battleship {
+	exports battleship;
+	
+}

@@ -1,21 +1,22 @@
-import org.junit.*;
+package battleshipTesting;
+
 import static org.junit.Assert.*;
 import org.junit.Test;
-//import battleship.*; 
+
 import battleship.Ship;
 
 
 public class ShipTest {	
 
     @Test
-    public void testShipCreationAndHitted() {
-        Ship ship = new Ship(5);
+    public void testShipCreationAndHitted() throws IllegalAccessException {
+        Ship ship = new battleship.Ship(5);
         ship.hitted();
         assertEquals(4,ship.getLifePoint()); 
     }
     
     @Test
-    public void testShipSunk() {
+    public void testShipSunk() throws IllegalAccessException {
         Ship ship = new Ship(2);
         ship.hitted();
         ship.hitted();
@@ -23,13 +24,13 @@ public class ShipTest {
     }
 
     @Test 
-    public void testShipCreation() {
-        Ship ship = new ship(5);
+    public void testShipCreation() throws IllegalAccessException {
+        Ship ship = new Ship(5);
         assertEquals(5,ship.getLifePoint());
     }
 
     @Test
-    public void testShipNotSunk() {
+    public void testShipNotSunk() throws IllegalAccessException {
         Ship ship = new Ship(2);
         ship.hitted();
         assertFalse(ship.isSunk());
@@ -43,3 +44,4 @@ public class ShipTest {
     }
 
 }
+

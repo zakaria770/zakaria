@@ -1,8 +1,11 @@
-import org.junit.*;
+package battleshipTesting;
+
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 import battleship.*;
-import battleship.util.*;
+//import battleship.util.*;
+import battleship.util.Answer;
 
 public class CellTest {
 
@@ -14,7 +17,7 @@ public class CellTest {
   }
 
   @Test
-  public void testSetShip(){
+  public void testSetShip() throws IllegalAccessException{
 
     Cell cell=new Cell();
     Ship ship=new Ship(5);
@@ -23,7 +26,7 @@ public class CellTest {
   }
 
   @Test
-  public void testGetShip(){
+  public void testGetShip() throws IllegalAccessException{
     Cell cell=new Cell();
     Ship ship=new Ship(5);
     cell.setShip(ship);
@@ -31,35 +34,35 @@ public class CellTest {
   }
 
   @Test
-  public void testShotInNothing(){
+  public void testShotInNothing() throws IllegalAccessException{
     Cell cell=new Cell();
     Ship ship=new Ship(5);
-    assertEquals(cell.shot(),Answer.MISSED);
+    assertEquals(cell.shoot(),Answer.MISSED);
   }
 
   @Test
-  public void testShot2Times(){
-    Cell cell=new Cell();
-    Ship ship=new Ship(5);
-    cell.setShip(ship);
-    cell.shot();
-    assertEquals(cell.shot(),Answer.MISSED);
-  }
-
-  @Test
-  public void testShotAndHit(){
+  public void testShot2Times() throws IllegalAccessException{
     Cell cell=new Cell();
     Ship ship=new Ship(5);
     cell.setShip(ship);
-    assertEquals(cell.shot(),Answer.HIT);
+    cell.shoot();
+    assertEquals(cell.shoot(),Answer.MISSED);
   }
 
   @Test
-  public void testShotAndSunk(){
+  public void testShotAndHit() throws IllegalAccessException{
+    Cell cell=new Cell();
+    Ship ship=new Ship(5);
+    cell.setShip(ship);
+    assertEquals(cell.shoot(),Answer.HIT);
+  }
+
+  @Test
+  public void testShotAndSunk() throws IllegalAccessException{
     Cell cell=new Cell();
     Ship ship=new Ship(1);
     cell.setShip(ship);
-    assertEquals(cell.shot(),Answer.SUNK);
+    assertEquals(cell.shoot(),Answer.SUNK);
   }
 
     // ---Pour permettre l'exécution des test----------------------
@@ -68,3 +71,4 @@ public class CellTest {
     }
 
 }
+
